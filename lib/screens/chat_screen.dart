@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:raven/widgets/message_screen.dart';
+import 'package:raven/widgets/messagefield.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
@@ -44,32 +46,16 @@ class ChatScreen extends StatelessWidget {
         ],
         backgroundColor: Theme.of(context).colorScheme.primary.withOpacity(0.5),
       ),
-      body: Stack(children: [
-        Container(
-          width: width,
-          height: height,
-          child: Opacity(
-            opacity: 0.3,
-            child: Image.asset(
-              "assets/images/pxfuel.jpg",
-              fit: BoxFit.fill,
-            ),
-          ),
-        ),
-        const Center(
-          child: Text(
-            'okat',
-            style: TextStyle(color: Colors.white),
-          ),
-        ),
-      ]),
-      bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Theme.of(context).colorScheme.primary,
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.abc), label: "lak"),
-            BottomNavigationBarItem(icon: Icon(Icons.abc), label: "lak"),
-            BottomNavigationBarItem(icon: Icon(Icons.abc), label: "lak")
-          ]),
+      body: const Column(
+        children: [Expanded(child: MessageScreen()), MessageField()],
+      ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //     backgroundColor: Theme.of(context).colorScheme.primary,
+      //     items: const [
+      //       BottomNavigationBarItem(icon: Icon(Icons.abc), label: "lak"),
+      //       BottomNavigationBarItem(icon: Icon(Icons.abc), label: "lak"),
+      //       BottomNavigationBarItem(icon: Icon(Icons.abc), label: "lak")
+      //     ]),
       // backgroundColor: Theme.of(context).colorScheme.primary,
     );
   }
