@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "711129969776",
+    "project_id": "raven-53e88",
+    "storage_bucket": "raven-53e88.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:711129969776:android:528d36cfe4ef440c1ff0b5",
+        "android_client_info": {
+          "package_name": "com.example.raven"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "711129969776-b1gnsd0t5d8nhqe5udjl0c67qdcvkijn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRXovo81K51l-BBcHSb-dDhS8l76f71gI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "711129969776-b1gnsd0t5d8nhqe5udjl0c67qdcvkijn.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "711129969776-lhsqg1nf8hd27k8s5tb08338v1co7njl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.raven"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
