@@ -23,6 +23,7 @@ class _AuthScreenState extends State<AuthScreen> {
 
   String _email = '';
   String _password = '';
+  String _username = '';
   File? _uplodedImage;
 
   void _saveForm() async {
@@ -56,7 +57,7 @@ class _AuthScreenState extends State<AuthScreen> {
               .collection('users')
               .doc(userCredentials.user!.uid)
               .set({
-            'username': 'user1',
+            'username': _username,
             'email': _email,
             'imageURL': dpURL,
           });
@@ -159,6 +160,29 @@ class _AuthScreenState extends State<AuthScreen> {
                         _password = value!;
                       },
                     ),
+                    if (!_isLogin)
+                      TextFormField(
+                        style: const TextStyle(color: Colors.white),
+                        decoration: InputDecoration(
+                          labelText: 'Username',
+                          icon: Icon(
+                            Icons.person,
+                            color: Theme.of(context).colorScheme.onBackground,
+                          ),
+                        ),
+                        obscureText: true,
+                        validator: (value) {
+                          if (value == null ||
+                              value.trim().isEmpty ||
+                              value.length < 4) {
+                            return "Username should be 4 letters long";
+                          }
+                          return null;
+                        },
+                        onSaved: (value) {
+                          _username = value!;
+                        },
+                      ),
                     const SizedBox(
                       height: 30,
                     ),
