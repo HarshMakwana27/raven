@@ -52,15 +52,6 @@ class _AuthScreenState extends State<AuthScreen> {
 
           await storageRef.putFile(_uplodedImage!);
           final dpURL = await storageRef.getDownloadURL();
-
-          await FirebaseFirestore.instance
-              .collection('users')
-              .doc(userCredentials.user!.uid)
-              .set({
-            'username': _username,
-            'email': _email,
-            'imageURL': dpURL,
-          });
         }
       } on FirebaseAuthException catch (error) {
         ScaffoldMessenger.of(context).clearSnackBars();
